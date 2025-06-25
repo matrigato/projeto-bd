@@ -87,6 +87,7 @@ INSERT INTO projeto.curso (nome, codigo, departamento, nivel_ensino, carga_horar
 ('Licenciatura em Ciencias Exatas', 'LIC_CE', 'INTER', 'Superior', 200, 20, 'Exatamente', '6-666', 8),
 ('Engenharia de Computação', 'ENG_COMP', 'INTER', 'Superior', 1, 145, 'Nem programador, nem engnheiro', '7-101', 9);
 
+
 INSERT INTO projeto.prerequisito (
     nome, codigo, departamento, prerequisito
 ) VALUES
@@ -126,6 +127,123 @@ INSERT INTO projeto.prerequisito (
     'Ter tentado desenhar uma mão alguma vez na vida
     (sem piada com IA aqui)'
 );
+
+
+INSERT INTO projeto.compoe (
+    disciplina, curso_nome,
+    curso_codigo, curso_departamento
+) VALUES
+('SCC0240', 'Computação', 'COMP', 'ICMC'),
+('SMA0332', 'Matematica', 'MAT', 'ICMC'),
+('COMP-01', 'Computação', 'COMP', 'ICMC'),
+('COMP-06', 'Computação', 'COMP', 'ICMC'),
+('QUIM-01', 'Quimica', 'QUIM', 'IQSC'),
+('QUIM-02', 'Quimica', 'QUIM', 'IQSC'),
+('QUIM-03', 'Quimica', 'QUIM', 'IQSC'),
+('ART-01', 'Artes', 'ART', 'H Arts');
+
+
+INSERT INTO projeto.ministra (professor, disciplina) VALUES
+('professor@gmail.com', 'SCC0240'),
+('pateta@gmail.com', 'SMA0332'),
+('duende@gmail.com', 'COMP-01');
+
+
+INSERT INTO projeto.matricula (
+    aluno, disciplina, periodo_letivo, data_efetivada, status,
+    nota, aval_comentario, classificacao_didatica,
+    classificacao_material, classificacao_relevancia,
+    classificacao_infraestrutura
+) VALUES
+(
+    'rafael@gmail.com', 'SCC0240', '2023-1', '2023-01-15',
+    'aprovado', 8.5, 'Ótimo professor!', 9, 8, 9, 8
+),
+(
+    'joao@gmail.com', 'SMA0332', '2023-1', '2023-01-16',
+    'ativa', NULL, NULL, NULL, NULL, NULL, NULL
+),
+(
+    'pedro@gmail.com', 'COMP-01', '2023-1', '2023-01-17',
+    'reprovado', 4.5, 'Precisa melhorar o material.', 5, 4, 6, 5
+),
+(
+    'alan24@gmail.com', 'SCC0240', '2023-1', '2023-01-18',
+    'aprovado', 9.0, 'Excelente curso!', 10, 9, 10, 9
+),
+(
+    'bia@gmail.com', 'SMA0332', '2023-1', '2023-01-19',
+    'aprovado', 8.0, 'Bom material.', 8, 8, 8, 8
+),
+(
+    'julia24@gmail.com', 'COMP-01', '2023-1', '2023-01-20',
+    'reprovado', 3.5, 'Dificuldade no conteúdo.', 4, 3, 5, 4
+),
+(
+    'josemaria@gmail.com', 'SCC0240', '2023-1', '2023-01-21',
+    'ativa', NULL, NULL, NULL, NULL, NULL, NULL
+),
+(
+    'mariajose@gmail.com', 'SMA0332', '2023-1', '2023-01-22',
+    'trancada', NULL, NULL, NULL, NULL, NULL, NULL
+),
+(
+    'larata@gmail.com', 'COMP-01', '2023-1', '2023-01-23',
+    'aprovado', 5.5, 'Material poderia ser melhor.', 6, 5, 6, 5
+),
+(
+    'camila@gmail.com', 'SCC0240', '2023-1', '2023-01-24',
+    'reprovado', 2.5, 'Muito difícil.', 3, 2, 4, 3
+),
+(
+    'neuro@gmail.com', 'SMA0332', '2023-1', '2023-01-25',
+    'trancada', NULL, NULL, NULL, NULL, NULL, NULL
+);
+
+
+INSERT INTO projeto.info_bolsa (
+    aluno, disciplina, periodo_letivo, info_bolsa
+) VALUES
+('rafael@gmail.com', 'SCC0240', '2023-1', 'Bolsa de iniciação científica'),
+('joao@gmail.com', 'SMA0332', '2023-1', 'Bolsa de monitoria'),
+('alan24@gmail.com', 'SCC0240', '2023-1', 'Bolsa de pesquisa'),
+('bia@gmail.com', 'SMA0332', '2023-1', 'Bolsa de extensão'),
+('julia24@gmail.com', 'COMP-01', '2023-1', 'Bolsa de iniciação científica'),
+('josemaria@gmail.com', 'SCC0240', '2023-1', 'Bolsa de monitoria'),
+('mariajose@gmail.com', 'SMA0332', '2023-1', 'Bolsa de pesquisa'),
+('larata@gmail.com', 'COMP-01', '2023-1', 'Bolsa de extensão'),
+('camila@gmail.com', 'SCC0240', '2023-1', 'Bolsa de iniciação científica'),
+('neuro@gmail.com', 'SMA0332', '2023-1', 'Bolsa de monitoria');
+
+
+INSERT INTO projeto.info_desconto (
+    aluno, disciplina, periodo_letivo, info_desconto
+) VALUES
+('pedro@gmail.com', 'COMP-01', '2023-1', 'Desconto de 50% na mensalidade'),
+('alan24@gmail.com', 'SCC0240', '2023-1', 'Desconto de 30% na mensalidade'),
+('bia@gmail.com', 'SMA0332', '2023-1', 'Desconto de 20% na mensalidade'),
+('julia24@gmail.com', 'COMP-01', '2023-1', 'Desconto de 40% na mensalidade'),
+('josemaria@gmail.com', 'SCC0240', '2023-1', 'Desconto de 25% na mensalidade'),
+('mariajose@gmail.com', 'SMA0332', '2023-1', 'Desconto de 15% na mensalidade'),
+('larata@gmail.com', 'COMP-01', '2023-1', 'Desconto de 10% na mensalidade'),
+('camila@gmail.com', 'SCC0240', '2023-1', 'Desconto de 35% na mensalidade'),
+('neuro@gmail.com', 'SMA0332', '2023-1', 'Desconto de 5% na mensalidade');
+
+
+INSERT INTO projeto.confirmacao (
+    disciplina, periodo_letivo, data_limite, taxa
+) VALUES
+('SCC0240', '2023-1', '2023-01-10', 100.00),
+('SMA0332', '2023-1', '2023-01-10', 100.00),
+('COMP-01', '2023-1', '2023-01-10', 50.00),
+('QUIM-01', '2023-1', '2023-01-10', 75.00),
+('QUIM-02', '2023-1', '2023-01-10', 75.00),
+('QUIM-03', '2023-1', '2023-01-10', 50.00),
+('ART-01', '2023-1', '2023-01-10', 25.00),
+('COMP-06', '2023-1', '2023-01-10', 30.00),
+('SCC0240', '2023-2', '2023-06-10', 100.00),
+('SMA0332', '2023-2', '2023-06-10', 100.00),
+('COMP-01', '2023-2', '2023-06-10', 50.00);
 
 
 COMMIT;
