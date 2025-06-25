@@ -3,7 +3,7 @@ START TRANSACTION;
 -- Todos os professores e os alunos com matrícula ativa para quem eles lecionam
 CREATE VIEW projeto.professor_aluno
 	AS SELECT a.professor, b.aluno, b.disciplina FROM
-	(SELECT email AS professor FROM projeto.usuario WHERE vinculo = 'Professor') a
+	(SELECT email AS professor FROM projeto.usuario WHERE UPPER(vinculo) = 'PROFESSOR') a
 		LEFT OUTER JOIN
 	(SELECT DISTINCT m.professor, c.aluno, m.disciplina
 		FROM projeto.ministra m, projeto.matricula c
@@ -16,7 +16,7 @@ CREATE VIEW projeto.professor_aluno
 CREATE VIEW projeto.matricula_mesma_unidade
 	AS SELECT c.aluno, c.disciplina, c.unidade FROM
 	(SELECT a.aluno, b.disciplina, a.unidade FROM
-		(SELECT email as aluno, unidade FROM projeto.usuario WHERE vinculo = 'Aluno') a
+		(SELECT email as aluno, unidade FROM projeto.usuario WHERE UPPER(vinculo) = 'ALUNO') a
 			JOIN projeto.matricula b
 			ON a.aluno=b.aluno) c
 		JOIN projeto.disciplina d

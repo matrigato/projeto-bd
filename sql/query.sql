@@ -37,7 +37,7 @@ SELECT m.professor, m.disciplina
 
 -- Todos os alunos das unidades em alguma localidade
 SELECT aluno
-	FROM (SELECT email AS aluno, unidade FROM projeto.usuario WHERE vinculo = 'aluno')
+	FROM (SELECT email AS aluno, unidade FROM projeto.usuario WHERE UPPER(vinculo) = 'ALUNO')
 	WHERE unidade IN (SELECT id FROM projeto.unidade WHERE (pais, cidade) = ('Brasil', 'São Carlos'));
 
 
