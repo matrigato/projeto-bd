@@ -24,7 +24,7 @@ INSERT INTO projeto.usuario(email, nome, sobrenome, telefone, data_nascimento, p
 ('ednaldo.pereira@gmail.com', 'Ednaldo', 'Pereira', '19 0000000000', '1973-06-12', 'Brasil', 'SP', 'São Paulo', 'Rua Vale Tudo', 200, NULL, 'masculino', '12345', NULL, NULL, NULL, 4),
 ('josemaria@gmail.com', 'Jose', 'Maria', '89 9995699999', '2000-01-01', 'Brasil', 'SP', 'Campinas', 'Rua 256', 895, NULL, 'masculino', 'senhadaora', 'Aluno', NULL, NULL, 1),
 ('mariajose@gmail.com', 'Maria', 'Jose', '18 9996599999', '2000-01-01', 'Brasil', 'SP', 'Campinas', 'Rua 256', 895, NULL, 'masculino', 'senhadaora', 'Aluno', NULL, NULL, 2),
-('pateta@gmail.com', 'Pateta', 'Disney', '20 0000000002', '1932-01-16', 'EUA', 'NY', 'New York', 'Street 1', 650, NULL, 'masculino', 'pateta2123', 'professor', 'Artes', 'Ator', 6),
+('pateta@gmail.com', 'Pateta', 'Disney', '20 0000000002', '1932-01-16', 'EUA', 'NY', 'New York', 'Street 1', 650, NULL, 'masculino', 'pateta2123', 'Professor', 'Artes', 'Ator', 6),
 ('larata@gmail.com', 'Mickey', 'Mouse', '20 0000000001', '1928-10-27', 'EUA', 'NY', 'New York', 'Street 1', 650, NULL, 'masculino', 'rato', 'Aluno', NULL, NULL, 3),
 ('papainoel@gmail.com', 'Papai', 'Noel', '00 0000000000', '1000-01-01', 'Polo Norte', 'Norte', 'Mais ao Norte', 'Rua 0', 0, 'Unica Casa', 'masculino', 'presente', NULL, NULL, NULL, 3),
 ('duende@gmail.com', 'Duende', 'Primeiro', '00 021457895', '1000-01-02', 'Polo Norte', 'Polo Norte', 'Mais ao Norte', 'Rua 0', 0, 'Unica Casa', 'masculino', 'duende1', 'Professor', 'Brinquedos', 'Melhor artesao do norte', 1),
@@ -33,6 +33,7 @@ INSERT INTO projeto.usuario(email, nome, sobrenome, telefone, data_nascimento, p
 ('tutubarao@gmail.com', 'Tutu', 'Barao', '60 19 9998899999', '2000-08-09', 'Brasil', 'SP', 'Ribeirão Preto', 'Rua 10', 1000, NULL, 'masculino', 'peixe', 'Funcionário Administrativo', NULL, NULL, 4),
 ('mr007@gmail.com', 'Bond', 'James', '19 0070070070', '1973-07-07', 'Brasil', 'SP', 'Ubatuba', 'Rua 2', 56, NULL, 'masculino', '007', 'Funcionário Administrativo', NULL, NULL, 1),
 ('todos@gmail.com', 'Todo', 'Mundo', '00 19 9999999999', '0001-01-01', 'Brasil', 'SP', 'Jundiai', 'Rua 03', 03, NULL, 'outro', 'todasassenhas', 'Funcionário Administrativo', NULL, NULL, 2),
+('mais_um_professor@gmail.com', 'Jatava', 'Cabano', '00 19 9999979299', '0001-01-01', 'Brasil', 'SP', 'Jundiai', 'Rua 03', 03, NULL, 'outro', 'todasassenhas', 'Professor', NULL, NULL, 2),
 ('fantasminha@gmail.com', 'Fantasma', 'Camarada', '19 4568710256', '2002-04-30', 'Brasil', 'SP', 'Mogi Mirim', 'Rua 456', 510, NULL, 'outro', 'buuuu', 'Funcionário Administrativo', NULL, NULL, 3);
 
 
@@ -42,7 +43,7 @@ INSERT INTO projeto.departamento(codigo, nome, chefe) VALUES
 ('ICMC', 'Instituto de Ciências Matemáticas e de Computação', 'professor@gmail.com'),
 ('IQSC', 'Instituto de Química de São Carlos', 'pateta@gmail.com'),
 ('H Arts', 'Arts Institute', 'duende@gmail.com'),
-('INTER', 'Inter Unidades', 'chupa.cabra@gmail.com');
+('INTER', 'Inter Unidades', 'mais_um_professor@gmail.com');
 
 
 INSERT INTO projeto.disciplina(codigo, nro_aulas_semanais, unidade) VALUES
