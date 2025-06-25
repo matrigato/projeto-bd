@@ -35,7 +35,7 @@ SELECT professor, disciplina
 	FROM projeto.ministra
 	WHERE disciplina IN (SELECT disciplina, curso_departamento FROM projeto.compoe WHERE curso_departamento = 'ICMC');
 
--- Todos os alunos 
+-- Todos os alunos de certa unidade
 SELECT aluno
 	FROM (SELECT aluno, unidade FROM projeto.usuario WHERE vinculo = 'aluno')
 	WHERE unidade IN (SELECT id FROM projeto.unidade WHERE (pais, cidade) = ('Brasil', 'São Carlos'));
