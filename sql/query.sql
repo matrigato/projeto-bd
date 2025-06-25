@@ -20,14 +20,26 @@ SELECT aluno
 	GROUP BY aluno
 	HAVING COUNT(*) = (SELECT COUNT (*) FROM projeto.ministra WHERE professor = 'professor@gmail.com');
 
-SELECT usuario
+-- Procurar por usuario especifico
+SELECT nome, sobrenome, email, vinculo
 	FROM projeto.usuario
 	WHERE Upper(usuario.nome)=’PATETA’;
 
-	
-SELECT aluno, disciplina, nota
-	FROM (SELECT aluno, disciplina FROM projeto.matricula, nota FROM projeto.matricula)
-	WHERE disciplina IN (SELECT disciplina FROM projeto.matricula WHERE professor = 'professor@gmail.com')
+-- Alunos e suas respectivas notas em alguma disciplina 
+SELECT aluno, nota
+	FROM (SELECT aluno, disciplina, nota FROM projeto.matricula)
+	WHERE disciplina = 'SCC0240');
+
+-- Todos os professores de determinado departamento
+SELECT professor, disciplina
+	FROM projeto.ministra
+	WHERE disciplina IN (SELECT disciplina, curso_departamento FROM projeto.compoe WHERE curso_departamento = 'ICMC');
+
+-- Todos os alunos 
+SELECT aluno
+	FROM (SELECT aluno, unidade FROM projeto.usuario WHERE vinculo = 'aluno')
+	WHERE unidade IN (SELECT id FROM projeto.unidade WHERE (pais, cidade) = ('Brasil', 'São Carlos'));
+
 
 
 COMMIT;
