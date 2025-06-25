@@ -20,6 +20,15 @@ SELECT aluno
 	GROUP BY aluno
 	HAVING COUNT(*) = (SELECT COUNT (*) FROM projeto.ministra WHERE professor = 'professor@gmail.com');
 
+SELECT usuario
+	FROM projeto.usuario
+	WHERE Upper(usuario.nome)=’PATETA’;
+
+	
+SELECT aluno, disciplina, nota
+	FROM (SELECT aluno, disciplina FROM projeto.matricula, nota FROM projeto.matricula)
+	WHERE disciplina IN (SELECT disciplina FROM projeto.matricula WHERE professor = 'professor@gmail.com')
+
 
 COMMIT;
 
