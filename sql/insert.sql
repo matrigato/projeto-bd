@@ -8,7 +8,9 @@ INSERT INTO projeto.unidade(pais, estado, cidade, rua, numero, complemento) VALU
 ('Brasil', 'SP', 'São Carlos', 'Av. Trab. São Carlense - Parque Arnold Schimidt', 400, 'IAU Bloco 2'),
 ('Brasil', 'SP', 'São Carlos', 'Av. Trab. São Carlense - Parque Arnold Schimidt', 400, 'IQSC Bloco 1'),
 ('Brasil', 'SP', 'Campinas', 'Cidade Universitária Zeferino Vaz - Barão Geraldo', NULL, 'Computação'),
-('EUA', 'Massachusetts', 'Cambridge', 'Brattle Street Cambridge', 86, 'Harvard Medical School');
+('EUA', 'Massachusetts', 'Cambridge', 'Brattle Street Cambridge', 86, 'Harvard Medical School'),
+('Brasil', 'SP', 'São Carlos', 'Av. Trab. São Carlense - Parque Arnold Schimidt', 400, 'ICMC Bloco 7'),
+('Brasil', 'SP', 'São Carlos', 'Av. Trab. São Carlense - Parque Arnold Schimidt', 400, 'IFSC');
 
 
 INSERT INTO projeto.usuario(email, nome, sobrenome, telefone, data_nascimento, pais, estado, cidade, rua, endereco_numero, endereco_complemento, sexo, senha, vinculo, prof_especializacao, prof_titulacao, unidade) VALUES
@@ -39,7 +41,8 @@ INSERT INTO projeto.usuario(email, nome, sobrenome, telefone, data_nascimento, p
 INSERT INTO projeto.departamento(codigo, nome, chefe) VALUES
 ('ICMC', 'Instituto de Ciências Matemáticas e de Computação', 'professor@gmail.com'),
 ('IQSC', 'Instituto de Química de São Carlos', 'pateta@gmail.com'),
-('H Arts', 'Arts Institute', 'duende@gmail.com');
+('H Arts', 'Arts Institute', 'duende@gmail.com'),
+('INTER', 'Inter Unidades', 'chupa.cabra@gmail.com');
 
 
 INSERT INTO projeto.disciplina(codigo, nro_aulas_semanais, unidade) VALUES
@@ -75,15 +78,54 @@ INSERT INTO projeto.necessidade_infraestrutura(codigo, necessidade_infraestrutur
 ('ART-01', 'computadores');
 
 
-INSERT INTO projeto.curso(nome, codigo, departamento, nivel_ensino, carga_horaria, nro_vagas, ementa, sala_aula, unidade) VALUES
+INSERT INTO projeto.curso (nome, codigo, departamento, nivel_ensino, carga_horaria, nro_vagas, ementa, sala_aula, unidade) VALUES
 ('Computação', 'COMP', 'ICMC', 'Superior', 20, 80, 'Muitos computadores', '5-103', 3),
-('Dados', 'DADO' ,'ICMC', 'Superior', 15, 70, 'Muitos Dados', '5-102', 2),
-('Matematica', 'MAT' ,'ICMC', 'Superior', 30, 120, 'Muita conta', '4-003', 2),
-('Quimica', 'QUIM' ,'IQSC', 'Superior', 16, 85, 'kaboom', '1-003', 6),
-('Artes', 'ART' ,'H Arts', 'Superior', 10, 20, 'fazendo arte', '0001', 7);
+('Dados', 'DADO', 'ICMC', 'Superior', 15, 70, 'Muitos Dados', '5-102', 2),
+('Matematica', 'MAT', 'ICMC', 'Superior', 30, 120, 'Muita conta', '4-003', 2),
+('Quimica', 'QUIM', 'IQSC', 'Superior', 16, 85, 'kaboom', '1-003', 6),
+('Artes', 'ART', 'H Arts', 'Superior', 10, 20, 'fazendo arte', '0001', 7),
+('Licenciatura em Ciencias Exatas', 'LIC_CE', 'INTER', 'Superior', 200, 20, 'Exatamente', '6-666', 8),
+('Engenharia de Computação', 'ENG_COMP', 'INTER', 'Superior', 1, 145, 'Nem programador, nem engnheiro', '7-101', 9);
 
-
-
+INSERT INTO projeto.prerequisito (
+    nome, codigo, departamento, prerequisito
+) VALUES
+(
+    'Introdução aos Compiuter', 'SCC0240',
+    'ICMC', 'Ainda ter sonhos e experanças'
+),
+(
+    'Números: Invenção ou Descoberta?', 'SMA0332',
+    'Tomar uma cerveja com o professor após a aula para ter crises exitenciais'
+),
+(
+    'Engenharia de Prompts', 'COMP-01',
+    'Ter desistido de apreder programação
+    e aceitado que a IA vai tomar nossos empregos'
+),
+(
+    'Como Virar Uber?', 'COMP-06',
+    'Jogar seu diploma no lixo e aproveitar
+    que o Uber ainda não usa carros autonomos'
+),
+(
+    'Kaboom: Uma Introdução aos Fogos de Artifício',
+    'QUIM-01', 'Gostar de explodir coisas'
+),
+(
+    'Kaboom 2: A Corzinha Agora é Outra', 'QUIM-02',
+    'Ter cursado "Kaboom: Uma Introdução aos Fogos de Artifício"'
+),
+(
+    'Engenharia de Prompts para Química', 'QUIM-03',
+    'Ter cansado de decorar tabela periódica 
+    e não se lembrar como faz distribuição eletrônica'
+),
+(
+    'Mãos: Porque São Tão Difíceis?', 'ART-01',
+    'Ter tentado desenhar uma mão alguma vez na vida
+    (sem piada com IA aqui)'
+);
 
 
 COMMIT;
