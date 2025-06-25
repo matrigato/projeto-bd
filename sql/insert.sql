@@ -224,4 +224,51 @@ INSERT INTO projeto.confirmacao (
 ('COMP-01', '2023-2', '2023-06-10', 50.00);
 
 
+INSERT INTO projeto.mensagem (
+    remetente, destinatario, timestamp, conteudo
+) VALUES
+('professor@gmail.com', 'pateta@gmail.com', '2025-01-28', 'Hello!'),
+('pateta@gmail.com', 'professor@gmail.com', '2025-01-29', 'Konnichiwa!'),
+(
+    'professor@gmail.com', 'camila@gmail.com', '2025-06-24',
+    'Sua recuperação será na próxima terça'
+),
+(
+    'professor@gmail.com', 'joao@gmail.com', '2024-06-10',
+    'Por favor, revise o material para a prova final.'
+),
+(
+    'professor@gmail.com', 'pedro@gmail.com', '2024-06-26',
+    'Sua nota foi atualizada no sistema.'
+),
+(
+    'pateta@gmail.com', 'duende@gmail.com', '2024-06-27',
+    'Precisamos marcar uma reunião para discutir o projeto.'
+),
+(
+    'duende@gmail.com', 'pateta@gmail.com', '2024-06-28',
+    'A reunião está marcada para amanhã às 10h.'
+),
+(
+    'bia@gmail.com', 'professor@gmail.com', '2025-04-29',
+    'Tenho dúvidas sobre o exercício 5.'
+),
+(
+    'professor@gmail.com', 'bia@gmail.com', '2025-05-30',
+    'Posso te ajudar hoje após a aula.'
+),
+(
+    'josemaria@gmail.com', 'mariajose@gmail.com', '2025-05-01',
+    'Vamos estudar juntos para a prova?'
+),
+(
+    'mariajose@gmail.com', 'josemaria@gmail.com', '2025-05-02',
+    'Sim, podemos marcar na biblioteca.'
+),
+(
+    'neuro@gmail.com', 'tutubarao@gmail.com', '2025-03-03',
+    'Você recebeu o material da última aula?'
+);
+
+
 COMMIT;
