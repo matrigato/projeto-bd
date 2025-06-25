@@ -8,4 +8,6 @@ CREATE INDEX projeto.IdxAvaliacaoMedia ON projeto.matricula
 
 CREATE INDEX projeto.IdxNomeUsuarioUpper ON projeto.matricula (Upper(usuario.nome))
 
+CREATE INDEX projeto.IdxVinculoUsuarioUpper ON projeto.matricula (Upper(usuario.vinculo))
+	
 COMMIT;
