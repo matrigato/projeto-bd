@@ -100,7 +100,7 @@ INSERT INTO projeto.prerequisito (
 ('Licenciatura em Ciencias Exatas', 'Saber ensinar alguém a contar até 10'),
 (
     'Engenharia de Computação', 'ENG_COMP', 'INTER',
-    'Saber como não queimar um placa mãe'
+    'Saber como não queimar uma placa mãe'
 );
 
 
