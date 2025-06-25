@@ -23,21 +23,21 @@ SELECT aluno
 -- Procurar por usuario especifico
 SELECT nome, sobrenome, email, vinculo
 	FROM projeto.usuario
-	WHERE Upper(usuario.nome)=’PATETA’;
+	WHERE Upper(usuario.nome)='PATETA';
 
 -- Alunos e suas respectivas notas em alguma disciplina 
 SELECT aluno, nota
 	FROM (SELECT aluno, disciplina, nota FROM projeto.matricula)
-	WHERE disciplina = 'SCC0240');
+	WHERE disciplina = 'SCC0240';
 
 -- Todos os professores de determinado departamento
-SELECT professor, disciplina
-	FROM projeto.ministra
-	WHERE disciplina IN (SELECT disciplina, curso_departamento FROM projeto.compoe WHERE curso_departamento = 'ICMC');
+SELECT m.professor, m.disciplina
+	FROM projeto.ministra m, projeto.compoe c
+	WHERE m.disciplina=c.disciplina AND c.curso_departamento = 'ICMC';
 
 -- Todos os alunos das unidades em alguma localidade
 SELECT aluno
-	FROM (SELECT aluno, unidade FROM projeto.usuario WHERE vinculo = 'aluno')
+	FROM (SELECT email AS aluno, unidade FROM projeto.usuario WHERE vinculo = 'aluno')
 	WHERE unidade IN (SELECT id FROM projeto.unidade WHERE (pais, cidade) = ('Brasil', 'São Carlos'));
 
 
