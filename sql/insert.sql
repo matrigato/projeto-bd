@@ -97,7 +97,10 @@ INSERT INTO projeto.prerequisito (
 ('Matematica', 'MAT', 'ICMC', 'Saber contar até 10'),
 ('Quimica', 'QUIM', 'IQSC', 'Saber como usar um extintor de incêndio'),
 ('Artes', 'ART', 'H Arts', 'Lápis e papel'),
-('Licenciatura em Ciencias Exatas', 'Saber ensinar alguém a contar até 10'),
+(
+    'Licenciatura em Ciencias Exatas', 'LIC_CE', 'INTER',
+    'Saber ensinar alguém a contar até 10'
+),
 (
     'Engenharia de Computação', 'ENG_COMP', 'INTER',
     'Saber como não queimar uma placa mãe'
