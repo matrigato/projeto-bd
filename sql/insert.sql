@@ -86,47 +86,21 @@ INSERT INTO projeto.curso (nome, codigo, departamento, nivel_ensino, carga_horar
 ('Quimica', 'QUIM', 'IQSC', 'Superior', 16, 85, 'kaboom', '1-003', 6),
 ('Artes', 'ART', 'H Arts', 'Superior', 10, 20, 'fazendo arte', '0001', 7),
 ('Licenciatura em Ciencias Exatas', 'LIC_CE', 'INTER', 'Superior', 200, 20, 'Exatamente', '6-666', 8),
-('Engenharia de Computação', 'ENG_COMP', 'INTER', 'Superior', 1, 145, 'Nem programador, nem engnheiro', '7-101', 9);
+('Engenharia de Computação', 'ENG_COMP', 'INTER', 'Superior', 1, 145, 'Nem programador, nem engenheiro', '7-101', 9);
 
 
 INSERT INTO projeto.prerequisito (
     nome, codigo, departamento, prerequisito
 ) VALUES
+('Computação', 'COMP', 'ICMC', 'Saber utilizar ChatGPT'),
+('Dados', 'DADO', 'ICMC', 'Ter um dado'),
+('Matematica', 'MAT', 'ICMC', 'Saber contar até 10'),
+('Quimica', 'QUIM', 'IQSC', 'Saber como usar um extintor de incêndio'),
+('Artes', 'ART', 'H Arts', 'Lápis e papel'),
+('Licenciatura em Ciencias Exatas', 'Saber ensinar alguém a contar até 10'),
 (
-    'Introdução aos Compiuter', 'SCC0240',
-    'ICMC', 'Ainda ter sonhos e experanças'
-),
-(
-    'Números: Invenção ou Descoberta?', 'SMA0332', 'ICMC',
-    'Tomar uma cerveja com o professor após a aula para ter crises exitenciais'
-),
-(
-    'Engenharia de Prompts', 'COMP-01', 'ICMC',
-    'Ter desistido de apreder programação
-    e aceitado que a IA vai tomar nossos empregos'
-),
-(
-    'Como Virar Uber?', 'COMP-06', 'ICMC',
-    'Jogar seu diploma no lixo e aproveitar
-    que o Uber ainda não usa carros autonomos'
-),
-(
-    'Kaboom: Uma Introdução aos Fogos de Artifício',
-    'QUIM-01', 'IQSC', 'Gostar de explodir coisas'
-),
-(
-    'Kaboom 2: A Corzinha Agora é Outra', 'QUIM-02', 'IQSC',
-    'Ter cursado "Kaboom: Uma Introdução aos Fogos de Artifício"'
-),
-(
-    'Engenharia de Prompts para Química', 'QUIM-03', 'IQSC',
-    'Ter cansado de decorar tabela periódica 
-    e não se lembrar como faz distribuição eletrônica'
-),
-(
-    'Mãos: Porque São Tão Difíceis?', 'ART-01', 'H Arts',
-    'Ter tentado desenhar uma mão alguma vez na vida
-    (sem piada com IA aqui)'
+    'Engenharia de Computação', 'ENG_COMP', 'INTER',
+    'Saber como não queimar um placa mãe'
 );
 
 
